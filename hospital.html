@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Hospital database and analytics case study by Emily Bailey."
+  >
+
+  <title>Hospital Database Case Study | Emily Bailey</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+
+      <a class="logo" href="index.html">
+        Emily Bailey
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- CASE STUDY INTRODUCTION -->
+    <section class="section case-study-hero">
+
+      <a class="back-link" href="index.html#projects">
+        ← Back to Projects
+      </a>
+
+      <p class="eyebrow">
+        Database Analytics Case Study
+      </p>
+
+      <h1>
+        Hospital Database and Analytics Project
+      </h1>
+
+      <p class="case-study-introduction">
+        A relational database and analytics project designed to help a
+        mid-sized outpatient hospital improve visibility into patient activity,
+        appointments, provider workload, diagnoses, billing, insurance, and
+        operational performance.
+      </p>
+
+      <div class="hero-tools">
+        <span>SQL</span>
+        <span>PostgreSQL</span>
+        <span>DBeaver</span>
+        <span>Google Cloud Platform</span>
+        <span>Tableau</span>
+      </div>
+
+    </section>
+
+    <!-- BUSINESS PROBLEM -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          01
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Business Problem
+          </p>
+
+          <h2>
+            Increasing patient volume created operational challenges.
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="case-study-grid">
+
+        <article class="case-study-card">
+
+          <h3>
+            The Challenge
+          </h3>
+
+          <p>
+            As patient volume increased, the hospital faced challenges with
+            appointment management, provider workload distribution, billing
+            transparency, diagnosis tracking, and operational reporting.
+          </p>
+
+        </article>
+
+        <article class="case-study-card">
+
+          <h3>
+            The Objective
+          </h3>
+
+          <p>
+            Create a scalable relational database that could organize hospital
+            records, support reliable SQL analysis, and provide actionable
+            operational and financial insights.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- DATABASE DESIGN -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          02
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Database Design
+          </p>
+
+          <h2>
+            A normalized eight-table relational structure.
+          </h2>
+
+          <p class="section-introduction">
+            The database followed third normal form to reduce redundancy,
+            preserve data integrity, and create reliable relationships between
+            hospital records.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="schema-grid">
+        <div>Patient</div>
+        <div>Appointment</div>
+        <div>Doctor</div>
+        <div>Department</div>
+        <div>Diagnosis</div>
+        <div>Appointment Diagnosis</div>
+        <div>Billing</div>
+        <div>Insurance</div>
+      </div>
+
+    </section>
+
+    <!-- IMPLEMENTATION -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          03
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Implementation
+          </p>
+
+          <h2>
+            Built, imported, and validated in PostgreSQL.
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="case-study-grid">
+
+        <article class="case-study-card">
+
+          <h3>
+            Database Creation
+          </h3>
+
+          <ul>
+            <li>
+              Created PostgreSQL tables using DDL statements
+            </li>
+
+            <li>
+              Defined primary and foreign keys
+            </li>
+
+            <li>
+              Added data types and required-field constraints
+            </li>
+
+            <li>
+              Created tables in the correct dependency order
+            </li>
+          </ul>
+
+        </article>
+
+        <article class="case-study-card">
+
+          <h3>
+            Data Import and Validation
+          </h3>
+
+          <ul>
+            <li>
+              Imported CSV data using PostgreSQL COPY commands
+            </li>
+
+            <li>
+              Confirmed row counts and data types
+            </li>
+
+            <li>
+              Tested relational integrity
+            </li>
+
+            <li>
+              Validated joins across operational tables
+            </li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SQL EXAMPLE -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          04
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            SQL Analysis
+          </p>
+
+          <h2>
+            Testing relationships between hospital records.
+          </h2>
+
+          <p class="section-introduction">
+            This query joins appointment records with patient and doctor
+            information to confirm that the relational connections work
+            correctly.
+          </p>
+        </div>
+
+      </div>
+
+      <pre class="code-block"><code>SELECT
+    a.appointment_id,
+    a.appointment_datetime,
+    p.first_name AS patient,
+    d.first_name AS doctor
+FROM appointment AS a
+JOIN patient AS p
+    ON a.patient_id = p.patient_id
+JOIN doctor AS d
+    ON a.doctor_id = d.doctor_id
+LIMIT 10;</code></pre>
+
+    </section>
+
+    <!-- ANALYTICS -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          05
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Analytics
+          </p>
+
+          <h2>
+            Operational and financial questions explored.
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="analytics-grid">
+
+        <article class="case-study-card">
+          <h3>Appointment Volume</h3>
+
+          <p>
+            Compared appointment activity across departments to identify areas
+            with the highest service demand.
+          </p>
+        </article>
+
+        <article class="case-study-card">
+          <h3>No-Show Rate</h3>
+
+          <p>
+            Evaluated monthly no-show patterns to identify potential scheduling
+            and patient communication issues.
+          </p>
+        </article>
+
+        <article class="case-study-card">
+          <h3>Doctor Workload</h3>
+
+          <p>
+            Compared appointment counts by provider to identify workload
+            imbalances.
+          </p>
+        </article>
+
+        <article class="case-study-card">
+          <h3>Diagnosis Frequency</h3>
+
+          <p>
+            Identified frequently recorded conditions to support staffing and
+            resource planning.
+          </p>
+        </article>
+
+        <article class="case-study-card">
+          <h3>Revenue and Payments</h3>
+
+          <p>
+            Compared charges with payments to evaluate financial recovery.
+          </p>
+        </article>
+
+        <article class="case-study-card">
+          <h3>Visit Duration</h3>
+
+          <p>
+            Reviewed average appointment duration by visit status.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          06
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Findings
+          </p>
+
+          <h2>
+            Key insights identified through the analysis.
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="case-study-grid">
+
+        <article class="case-study-card">
+
+          <h3>
+            High-Demand Departments
+          </h3>
+
+          <p>
+            Cardiology and Radiology showed the highest appointment volumes,
+            suggesting stronger demand for cardiovascular and imaging services.
+          </p>
+
+        </article>
+
+        <article class="case-study-card">
+
+          <h3>
+            Uneven Provider Workload
+          </h3>
+
+          <p>
+            Some doctors handled significantly more appointments than others,
+            indicating potential workload imbalance.
+          </p>
+
+        </article>
+
+        <article class="case-study-card">
+
+          <h3>
+            Common Diagnoses
+          </h3>
+
+          <p>
+            Hypertension, asthma, flu, and COVID-19 appeared frequently,
+            providing useful information for staffing and resource planning.
+          </p>
+
+        </article>
+
+        <article class="case-study-card">
+
+          <h3>
+            Financial Recovery Gaps
+          </h3>
+
+          <p>
+            Some departments collected less relative to charges, suggesting
+            opportunities to improve insurance verification and billing
+            follow-up.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section class="section case-study-section">
+
+      <div class="case-study-heading">
+
+        <p class="case-study-number">
+          07
+        </p>
+
+        <div>
+          <p class="eyebrow">
+            Recommendations
+          </p>
+
+          <h2>
+            Actions supported by the data.
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="recommendation-list">
+
+        <article class="recommendation-item">
+          <h3>Reduce No-Show Rates</h3>
+
+          <p>
+            Introduce appointment reminders through email or text messaging
+            and make rescheduling easier.
+          </p>
+        </article>
+
+        <article class="recommendation-item">
+          <h3>Balance Provider Workload</h3>
+
+          <p>
+            Adjust scheduling templates and redirect patients toward
+            underutilized providers.
+          </p>
+        </article>
+
+        <article class="recommendation-item">
+          <h3>Improve Financial Recovery</h3>
+
+          <p>
+            Investigate departments with lower payment-to-charge ratios and
+            strengthen insurance verification and billing follow-up.
+          </p>
+        </article>
+
+        <article class="recommendation-item">
+          <h3>Use Diagnosis Data for Planning</h3>
+
+          <p>
+            Apply diagnosis frequency data to staffing, equipment, and
+            preventive-care planning.
+          </p>
+        </article>
+
+        <article class="recommendation-item">
+          <h3>Maintain Operational Reporting</h3>
+
+          <p>
+            Continue regular dashboard reviews and automate database extraction
+            where possible.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>
+      © <span id="current-year"></span> Emily Bailey
+    </p>
+
+    <p>
+      Hospital Database and Analytics Case Study
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
